@@ -26,6 +26,13 @@ public class Teams {
 	}
 	
 	/**
+	 * @return List with all teams loaded. (AGREGAR A UML)
+	 */
+	public ArrayList<Team> getTeams(){
+		return teams;
+	}
+	
+	/**
 	 * Returns the team that plays in the next turn.
 	 * @param currentTeam
 	 * @return Team that plays in the next turn. Returns null if the parameter is null.

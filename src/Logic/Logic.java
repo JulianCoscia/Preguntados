@@ -2,11 +2,13 @@ package Logic;
 
 import java.awt.Color;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 
 import Question.*;
 import Team.*;
@@ -21,24 +23,58 @@ public class Logic {
 		questions = new Questions();
 		
 		// Get the user's "Documents" folder path
-        String userHome = System.getProperty("user.home");
-        Path documentsPath = Paths.get(userHome, "Documents");
+        //String userHome = System.getProperty("user.home");
+        //Path documentsPath = Paths.get(userHome, "Documents");
 
-        Path teamsPath = Paths.get(documentsPath.toString(), "EquiposDelPreguntados.txt");
-        Path questionsPath = Paths.get(documentsPath.toString(), "PreguntasDelPreguntados.txt");
+        //Path teamsPath = Paths.get(documentsPath.toString(), "EquiposDelPreguntados.txt");
+        //Path questionsPath = Paths.get(documentsPath.toString(), "PreguntasDelPreguntados.txt");
+		
+		URL teamsURL = this.getClass().getResource("/archives/EquiposDelPreguntados.txt");
+		URL questionsURL = this.getClass().getResource("/archives/PreguntasDelPreguntados.txt");
+		
+		//Path teamsPath = Paths.get(teamsURL.getPath());
+        //Path questionsPath = Paths.get(questionsURL.getPath());
 
         // Checks if the files already exists
-        File teamFile = teamsPath.toFile();
-        File questionsFile = questionsPath.toFile();
+        //File teamFile = teamsPath.toFile();
+       // File questionsFile = questionsPath.toFile();
         
         // Loads the teams and questions to the game
-        if (teamFile.exists() && questionsFile.exists()){
-            loadTeams(teamsPath);
-            loadQuestions(questionsPath);
+        //if (teamFile.exists() && questionsFile.exists()){
+            loadTeams(teamsURL);
+            loadQuestions(questionsURL);
+       // }
+	}
+	//____________________ Methods ____________________
+	
+	public void loadQuestions(URL url) {
+		try (InputStream inputStream = url.openStream();
+		         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            
+			String line;
+            while ((line = reader.readLine()) != null) {
+                createQuestion(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
         }
 	}
 	
-	//____________________ Methods ____________________
+	public void loadTeams(URL url) {
+	    try (InputStream inputStream = url.openStream();
+	         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+	        
+	        String line;
+	        while ((line = reader.readLine()) != null) {
+	            createTeam(line);
+	        }
+	    } catch (IOException e) {
+	        System.err.println("Error reading the file: " + e.getMessage());
+	    }
+	}
+	
+	
+	
 	/**
 	 * This method searches in the path 'path' the file that contains the questions for the game and load all of them.
 	 * @param path Path of the file 'PreguntasDelPreguntados'.
@@ -82,25 +118,35 @@ public class Logic {
 		if (parts.length == 2) {
 			switch (parts[1].toLowerCase()) {
 				case "azul":
-					color = Color.BLUE;
+					color = new Color(70, 81, 206);
+					break;
 				case "gris":
-					color = Color.GRAY;
+					color = new Color(134, 134, 134);
+					break;
 				case "verde":
-					color = Color.GREEN;
+					color = new Color(28, 166, 38);
+					break;
 				case "violeta":
-					color = Color.MAGENTA;
+					color = new Color(163, 73, 164);
+					break;
 				case "rosa":
-					color = Color.PINK;
+					color = new Color(255, 119, 164);
+					break;
 				case "naranja":
-					color = Color.ORANGE;
+					color = new Color(255, 102, 0);
+					break;
 				case "amarillo":
-					color = Color.YELLOW;
+					color = new Color(240, 204, 2);
+					break;
 				case "rojo":
-					color = Color.RED;
+					color = new Color(237, 28, 36);
+					break;
 				case "negro":
-					color = Color.BLACK;
+					color = new Color(0, 0, 0);
+					break;
 				case "blanco":
 					color = Color.WHITE;
+					break;
 			}
 			
 			teams.createTeam(parts[0], color);
@@ -141,6 +187,13 @@ public class Logic {
 	 */
 	public int getNumberOfTeams() {
 		return teams.getNumberOfTeams();
+	}
+	
+	/**
+	 * @return List of teams loaded. (agregar a UML)
+	 */
+	public ArrayList<Team> getTeams(){
+		return teams.getTeams();
 	}
 	
 	/**

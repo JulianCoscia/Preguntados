@@ -1,20 +1,25 @@
 package Logic;
 
+import java.util.ArrayList;
+
+import GUI.GameWindow;
 import Question.*;
 import Team.*;
 
 public class Game {
 	private Question currentQuestion;
 	private Team currentTeam;
-	private int timer;
+	private Timer timer;
 	private int timePerQuestion;
 	private Logic myLogic;
+	private GameWindow GUI;
 	
-	public Game(int timePerQuestion) {
+	public Game(int secondsPerQuestion, GameWindow GUI) {
 		myLogic = new Logic();
-		this.timePerQuestion = timePerQuestion;
+		this.timePerQuestion = secondsPerQuestion;
 		currentQuestion = myLogic.getFirstQuestion();
 		currentTeam = myLogic.getFirstTeam();
+		this.GUI = GUI;
 	}
 	
 	//____________________ Methods ____________________
@@ -61,39 +66,67 @@ public class Game {
 	}
 	
 	/**
-	 * @return The number of teams loaded.
+	 * @return List of teams loaded.
 	 */
-	public int getNumberOfTeams() {
-		return myLogic.getNumberOfTeams();
+	public ArrayList<Team> getTeams(){
+		return myLogic.getTeams();
+	}
+	
+	/**
+	 * @return Time per question.
+	 */
+	public int getTimePerQuestion() {
+		return timePerQuestion;
 	}
 	
 	/**
 	 * Resets the question timer.
 	 */
 	public void resetTimer() {
-		timer = 0;
-		timePerQuestion = timer + 0;
-		timer = timePerQuestion + 0;
+		timer.resetTimer();
 	}
 	
 	/**
 	 * Pauses the question timer.
 	 */
 	public void pauseTimer() {
-		
+		timer.pauseTimer();
 	}
 	
 	/**
 	 * Plays the question timer.
 	 */
 	public void playTimer(){
-		
+		timer = new Timer(timePerQuestion, this);
+		timer.resetTimer();
+		timer.startTimer();
+	}
+	
+	public void aSecondPassed(int currentSecondsRemaining) {
+		GUI.aSecondPassed(currentSecondsRemaining);
 	}
 	
 	/**
-	 * Finishes the game.
+	 * The end of the game.
 	 */
-	public void endGame() {
+	public ArrayList<Team> gameOver() {
+		Team winner = myLogic.getFirstTeam();
 		
+		for (Team t: myLogic.getTeams()){
+			if(t.getScore() > winner.getScore()) {
+				winner = t;
+			}
+		}
+		
+		ArrayList<Team> winners = new ArrayList<Team>();
+		winners.add(winner);
+		
+		for (Team t:myLogic.getTeams()) {
+			if(t != winner && t.getScore() == winner.getScore()) {
+				winners.add(t);
+			}
+		}
+		
+		return winners;
 	}
 }

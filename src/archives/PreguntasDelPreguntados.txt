@@ -1,0 +1,120 @@
+1;¿Como se llama el narrador que usa la 1° persona del singular?;Presencial;#Protagonista;Antagonista
+2;¿Cómo se denomina al tipo de sustantivo propio que identifica lugares?;Antropónimo;Antónimo;#Topónimo
+3;¿Cómo se llama el dios del rayo? (mitología griega);#Zeus;Poseidon;Hércules
+4;¿Cómo se denomina el personaje mitológico, cuya característica tiene cuerpo de hombre y cabeza de toro?;Tiranosauro;Homosauro;#Minotauro
+5;Nombre del personaje, cuya característica dentro del cuento policial es descubrir quiénes son los culpables;#Detective;Policía;Victima
+6;Título del cuento, en el que se relata la historia de un joven que tiene como objetivo “matar” a su jefe porque tiene un ojo de “buitre”;#Corazón delator;El gato negro;El accidente
+7;¿Cuál es el objetivo que tienen los TEXTOS ARGUMENTATIVOS?;Comunicar;#Convencer;Leer
+8;¿Que signo de puntuación usamos al finalizar una oración?;#Punto;Dos puntos;Punto y aparte
+9;¿Qué signo de puntuación utilizamos para finalizar un párrafo?;Punto seguido;#Punto y aparte;Comillas
+10;TODOS LOS NOMBRES LLEVAN…;#Mayúscula;Minúscula;Agudas
+11;¿Qué signo de puntuación usamos cuando finalizamos un cuento?;Final;#Punto final;Punto
+12;¿Cómo se denomina EL PRONOMBRE, cuya característica indica POSESION/PERTENENCIA?;Pronombre persona;Pronombre demostrativo;#Pronombre posesivo
+13;¿Cuales de estas no es una de las tres vertientes según la hidrografia americana?;Atlántica;#Indica;Pacífica
+14;¿Cuales de estas palabras tiene que ver con un elemento del mapa?;fuente;cruz;#escala
+15;¿Cual es el objeto de estudio de la Geografía?;Los países;#El espacio Geográfico;El planeta
+16;¿Cual de estos océanos no limita con América?;#Océano Indico;Océano pacifico;Océano Atlántico
+17;¿Cuales de los siguientes países forma parte de america central?;México;Canadá;#Panamá
+18;¿Con cuantas provincias limita La Pampa?;3;#6;9
+19;La distancia entre un punto y la línea del ecuador se denomina:;Longitud;#Latitud;Coordenadas
+20;¿Cuantos países limitan con nuestro país?;3;#5;7
+21;¿A què llamamos clima?;#Al conjunto de condiciones atmosféricas promedio de un lugar o región.;Al estado del tiempo en un determinado momento y lugar.;A las temperaturas diarias y mensuales de un lugar determinado.
+22;¿Cuál de ellos es considerado por sus condiciones naturales un Bioma?;#Tundra;Clima seco;Precipitaciones anuales y mensuales
+23;¿Cuál es el sistema montañoso más importante de nuestro país?;#La Cordillera de los Andes;Las Sierras Pampeanas;Las Sierras de Tandilia y Ventania
+24;¿A què llamamos GLOBALIZACIÒN?;#A un proceso a nivel Mundial;A un proceso común y propio de Argentina;A un proceso nacional y cultural
+25;¿Qué es el Producto Bruto Interno (PBI)?;#Es el indicador económico más usado en Argentina.;Es el indicador que muestra la mortalidad infantil de un país.;Es el indicador que mide el nivel educativo de un país.
+26;¿Què es una MULTINACIONAL?;#Es una empresa muy importante que proviene de países del primer mundo y se instala en países subdesarrollados.;Es una empresa nacional muy reconocida;Es una empresa proveniente de países subdesarrollados.
+27;¿Cuáles son los Bienes comunes de la tierra?;#El agua, suelo y aire;El agua, la fauna y la flora;El agua, aire y la flora
+28;¿A què llamamos recurso natural?;#A aquellos elementos presentes en la naturaleza que satisfacen las necesidades del hombre.;A aquellos elementos artificiales de la naturaleza.;A aquellos elementos invisibles de la naturaleza.
+29;¿Cuál es el porcentaje de agua dulce aproximado a nivel mundial?;El 50%;#El 3%.;El 99%
+30;¿Que especie de humanos somos?;Homo neandertal;#Homo Sapien sapiens;Homo habilis
+31;Las zonas cercanas a los polos suelen tener:;Clima frío húmedo;#Clima nival;Clima templado
+32;La revolución neolítica consistió en:;Manejo de metales;#Cultivo y domesticación;Viajes interoceánicos
+33;Las figuras más importantes de Egipto antiguo fueron:;#Faraón, sacerdotes y visir;Faraón y familia;Faraón y soldados
+34;El rio Nilo atraviesa África:;#Del centro al norte;Del centro al sur;De este a oeste
+35;El medio de transporte más eficiente de la antigüedad fue:;Caballos;Caballos y carros;#Embarcaciones
+36;Las líneas del ecuador y de los trópicos:;#Son paralelas;Se entrecruzan;Sirven para organizar los husos horarios
+37;El meridiano de Greenwich señala:;#El inicio internacional del huso horario;La mitad exacta del planeta;El inicio del invierno/ verano
+38;Los mapas usualmente suelen contener:;#El norte en la parte superior;El norte en la parte inferior;No es necesario indicar el norte
+39;El sistema de escalas numérica para representar superficies:;#Respeta las dimensiones proporcionalmente;Respeta los volúmenes proporcionalmente;No tiene en cuenta las distancias
+40;La revolución francesa tuvo como ideales:;#Libertad, igualdad, fraternidad y justicia;Libertad, trabajo, poder y justicia;Poder, Justicia, empatía y generosidad
+41;La revolución de mayo de 1810 expulsó a:;Virrey Vértiz;#Virrey Cisneros;Invasores ingleses
+42;La campaña libertadora del Ejército de los andes liberó:;Solo Argentina;Argentina y Chile;#Argentina, Perú y Chile
+43;La declaración de la independencia firmada en Tucumán no fue firmada por:;#Santa fé;Córdoba;Mendoza
+44;El proyecto unitario fue impulsado por:;#Liberales, sobre todo porteños;Gauchos de la pampa bonaerense;Caudillos del interior
+45;Rosas fue:;Gobernador del país;Caudillos del interior;#Gobernador de Buenos Aires
+46;El imperialismo europeo de silgo XIX:;Dominó américa sobre todo;#Dominó África y Asia;Dominó solo regiones de Oceanía
+47;La primera guerra mundial fue:;1916 a 1919;1914 a 1921;#1914 a 1918
+48;El nazismo surge en Alemania:;Antes de la primera guerra mundial;Luego de la segunda guerra mundial;#En el periodo de entreguerras
+49;La ley Saenz peña de 1912 estableció:;Voto censitario, masculino y secreto;#Voto universal, obligatorio y secreto;Voto secreto, opcional y masculino
+50;¿Cuál es el resultado de sumar los ángulos internos de un triángulo?;90°;#180°;360°;270°
+51;Si un tren viaja a 60 km/h durante 2 horas, ¿qué distancia habrá recorrido?;30 km;#120 km;100 km;60 km
+52;¿Cómo se llama el teorema que dice que en un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos?;#Teorema de Pitágoras;Teorema de Tales;Teorema de Euler;Teorema de Gauss
+53;¿Cómo se llama un polígono con 8 lados?;Pentágono;Heptágono;#Octágono;Hexágono
+54;¿Cómo se llama la operación inversa a la multiplicación?;Suma;#División;Potenciación;Resta
+55;Algunos de los derechos que deben garantizarse para todos y todas los y las niños, niñas y adolescentes son:;Salud;Educación;Identidad;#Todas son correcta
+56;¿Cuál de los siguientes puntos corresponde a alguno de los ejes desde lo que se aborda la Educación Sexual Integral?;Valorar la afectividad;El cuidado del cuerpo y la salud;Ejercer nuestros derechos;#Todas son correctas
+57;¿A partir de qué edad puedo asistir a Centros de Salud para ser atendido y recibir información sobre salud integral, sin requerir la presencia de un adulto?;#13 años;16 años;18 años;15 años
+58;La línea 102 corresponde a un servicio gratuito y confidencial de atención, asistencia y asesoramiento especializado al que podemos llamar ante situaciones:;De violencia;#Donde tus derechos, como niño, niña o adolescente no sean respetados;De personas con consumos problemáticos de sustancias;Ninguna de las anteriores
+59;La línea 144 corresponde a un servicio gratuito y confidencial de atención, asistencia y asesoramiento especializado al que podemos llamar ante situaciones:;#De violencia;Donde tus derechos, como niño, niña o adolescente no sean respetados;De personas con consumos problemáticos de sustancias;Ninguna de las anteriores
+60;La línea 141 corresponde a un servicio gratuito y confidencial de atención, asistencia y asesoramiento especializado al que podemos llamar ante situaciones:;De violencia;Donde tus derechos, como niño, niña o adolescente no sean respetados;#De personas con consumos problemáticos de sustancias;Ninguna de las anteriores
+61;¿Qué es el átomo?;La unidad más pequeña de un compuesto;#La unidad más pequeña de un elemento químico;Una molécula;Un ion
+62;¿Cuál es el símbolo químico del oxígeno?;O2;#O;Ox;O3
+63;¿Cuántos protones tiene el átomo de carbono?;8;4;#6;12
+64;¿Qué es una molécula?;#Un conjunto de átomos unidos químicamente;Un solo átomo;Un elemento;Un ion
+65;¿Cuál es la fórmula química del agua?;H2O2;HO2;#H2O;OH
+66;¿Qué tipo de enlace se forma entre el sodio y el cloro en la sal (NaCl)?;Enlace de hidrógeno;Enlace covalente;Enlace metálico;#Enlace iónico
+67;¿Qué partículas se encuentran en el núcleo de un átomo?;#Protones y neutrones;Electrones y protones;Solo neutrones;Electrones y neutrones
+68;¿Cuál es el gas más abundante en la atmósfera terrestre?;Oxígeno;#Nitrógeno;Dióxido de carbono;Helio
+69;¿En qué película aparece el personaje Jack Sparrow?;Harry Potter;#Piratas del Caribe;El Señor de los Anillos;La Momia
+70;¿Quién protagoniza la película "Misión Imposible"?;Brad Pitt;Leonardo DiCaprio;#Tom Cruise;Matt Damon
+71;¿Cómo se llama el universo cinematográfico de superhéroes que incluye a Iron Man y Capitán América?;#Universo Cinematográfico de Marvel (UCM);Universo de DC;Universo de Star Wars;Universo de Transformers
+72;¿Qué actriz interpreta a Hermione Granger en la saga de Harry Potter?;Kristen Stewart;Jennifer Lawrence;#Emma Watson;Natalie Portman
+73;¿Cómo se llama el superhéroe interpretado por Robert Downey Jr.?;Hulk;#Iron Man;Spider-Man;Thor
+74;¿Cuál de las siguientes películas fue dirigida por Steven Spielberg?;Titanic;Gladiador;#Jurassic Park;El Padrino
+75;¿Qué película ganó el último Óscar a mejor película?;Barbie;American Fiction;Anatomía de una caída;#Oppenheimer
+76;¿En qué saga aparece el personaje "Gollum"?;#El Señor de los Anillos;Harry Potter;Star Wars;Narnia
+77;¿Quién interpretó a "El Guasón" en la película de 2019?;Heath Ledger;Jared Leto;#Joaquin Phoenix;Christian Bale
+78;¿Qué actriz ganó el Óscar por su actuación en "La La Land"?;Jennifer Lawrence;#Emma Stone;Natalie Portman;Scarlett Johansson
+79;¿Cómo se llama el mundo ficticio donde sucede "Game of Thrones"?;Middle Earth;#Westeros;Narnia;Pandora
+80;¿Qué actor protagonizó la película "El Lobo de Wall Street"?;Brad Pitt;Christian Bale;#Leonardo DiCaprio;Matt Damon
+81;¿Que director ganó el Óscar a mejor director en 2024?;#Christopher Nolan;Martin Scorsese;Jonathan Glazer;Justine Triet
+82;¿Cuál fue la primera película en ganar el Óscar a mejor película animada en el año 2001?;Jimmy Neutron: El niño genio;#Shrek;Monsters Inc.;Toy story
+83;¿Quien es el artista más ganador de premios Grammys de la historia?;Kanye West;Taylor Swift;U2;#Beyoncé
+84;¿Como se llama la película argentina ganadora del Óscar a mejor película internacional en el año 2009?;#El secreto de sus ojos;Argentina 1985;Nueve Reinas;Relatos Salvajes
+85;¿Cuál es el actor más ganador a mejor actor en la historia de los premios Óscar?;Leonardo Di Caprio;#Daniel Day-Lewis;Brad Pitt;Robert De Niro
+86;¿Que actor interpreta a Batman en la trilogía del caballero de la noche?;Chris Evans;Brad Pitt;#Christian Bale;Cillian Murphy
+87;¿Cómo se llama el protagonista de las películas de Star Wars?;#Luke Skywalker;Anakin Skywalker;Han Solo;Leia Skywalker
+88;¿En qué año se emitió el primer capítulo del anime Dragon Ball?;1989;#1986;1994;1982
+89;¿En qué año ganó la selección Argentina de básquet la medalla de oro en los juegos olímpicos?;Sidney 2000;Atlanta 1996;#Atenas 2004;Beijing 2008
+90;¿Como se llama la selección Argentina de hockey femenino?;Las gladiadoras;Las panteras;#Las leonas;Las cigüeñas
+91;¿Como se llama el 5 veces campeón argentino de formula 1?;Carlos Reutemann;#Juan Manuel Fangio;Franco Colapinto;José Froilán González
+92;¿Cuál fue el mejor ranking mundial alcanzado por el tenista argentino Juan Martín del Potro?;#3ro;2do;4to;5to
+93;¿En qué año consiguió la selección masculina de voley argentina su última medalla en los juegos olímpicos?;2016;2024;2012;#2020
+94;¿Quien fue el primer diez argentino en consagrarse campeón mundial del fútbol?;#Mario Alberto Kempes;Diego Maradona;Lionel Messi;Alfredo Di Stefano
+95;¿Quien es el maximo ganador de torneos locales en el fútbol argentino?;Boca Juniors;#River Plate;Independiente;Racing Club
+96;¿Cuántas Anillos de la NBA tiene Manu Ginóbili?;#4;3;1;2
+97;¿Cuál es el puesto más alto alcanzado por Los Pumas en el mundial de rugby?;Segundo;Cuarto;#Tercero;Quinto
+98;¿Quien es el maximo ganador de la copa libertadores?;River Plate;Boca Juniors;Peñarol;#Independiente
+99;¿Como se llama el tenista argentino mundialmente conocido nacido en Bahía Blanca?;#Guido Pella;Juan Martín del Potro;Juan Mónaco;David Nalbandián
+100;¿Cuántas medallas de oro consiguió la delegación Argentina en los juegos olímpicos Río 2016?;#3;4;6;5
+101;¿Cuál es el equipo argentino más ganador de copas intercontinentales (Copa Intercontinental y Mundial de Clubes)?;River Plate;Estudiantes de La Plata;Independiente;#Boca Juniors
+102;¿Que deporte práctica la Argentina Estefanía Banini?;Voley;#Fútbol;Hockey;Tenis
+103;¿A qué deportista argentino reconocido es apodado “El Heredero”?;Luciano De Cecco;Luciano Palonsky;#Facundo Conte;Bruno Lima
+104;¿En qué club argentino debutó Lionel Messi?;River Plate;Newell's Old Boys;Boca Juniors;#Ninguna es correcta
+105;¿Cuál fue el único mundial al que no clasificó la selección Argentina de fútbol?;#1970;1966;1974;1962
+106;¿Cómo se llama el jugador de padel argentino reconocido y número 2 del ranking mundial?;Martin Di Nenno;#Agustin Tapia;Federico Chingotto;Franco Stupaczuk
+107;¿Cuántos goles hizo Lionel Messi en el año 2011, considerado récord mundial?;78;84;#91;69
+108;¿En qué año ganó la medalla dorada Paula “La peque” Pareto en Judo?;#2016;2020;2012;2008
+109;¿En qué año ganó la Copa Davis de tenis la selección Argentina?;2014;#2016;2019;2015
+110;¿Quién fue el vocalista de la banda “Soda Stereo”?;Ricardo Mollo;#Gustavo Cerati;Charly García;Andrés Calamaro
+111;¿Cuál de estos músicos argentinos es considerado uno de los padres del rock nacional?;#Luis Alberto Spinetta;León Gieco;Fito Páez;Gustavo Santaolalla
+112;¿Qué álbum de Charly García es considerado uno de los mejores del rock nacional?;Parte de la religión;#Clics Modernos;Yendo de la cama al living;Filosofía barata y zapatos de goma
+113;¿Qué banda de rock nacional tuvo como vocalista a Ciro Martínez?;#Los Piojos;La Renga;Divididos;Ratones Paranoicos
+114;¿En qué década comenzó a desarrollarse el rock nacional en Argentina?;1980;#1960;2000;1950
+115;¿Qué músico argentino es conocido por la canción “Yo vengo a ofrecer mi corazón”?;Charly García;#Fito Páez;León Gieco;Gustavo Cerati
+116;¿Qué banda argentina lanzó el álbum “Oktubre”?;Los Auténticos Decadentes;La Renga;#Patricio Rey y sus Redonditos de Ricota;Los Perico
+117;¿Qué banda fue liderada por Ricardo Mollo?;Los Ratones Paranoicos;#Divididos;Sumo;Los Piojos
+118;¿Quién pintó la “Mona Lisa”?;Vincent van Gogh;#Leonardo da Vinci;Pablo Picasso;Salvador Dalí
+119;¿Qué estilo artístico es conocido por sus formas geométricas y abstracción?;Impresionismo;#Cubismo;Surrealismo;Barroco
+120;¿Quién compuso la sinfonía “No. 5” en do menor?;#Ludwig van Beethoven;Wolfgang Amadeus Mozart;Johann Sebastian Bach;Frédéric Chopin

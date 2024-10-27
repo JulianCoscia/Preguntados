@@ -52,7 +52,7 @@ public class Questions {
 	public Question nextQuestion(Question currentQuestion){
 		Question response = null;
 		
-		if (currentQuestion.getQuestionNumber() < questions.size()) {
+		if (currentQuestion != null && currentQuestion.getQuestionNumber() < questions.size()) {
 			try {
 				response = questions.get(currentQuestion.getQuestionNumber());
 			}catch(Exception e) {

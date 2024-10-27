@@ -1,0 +1,8 @@
+Equipo Rojo;rojo
+Equipo Blanco;blanco
+Equipo Naranja;naranja
+Equipo Azul;azul
+Equipo Violeta;violeta
+Equipo Verde;verde
+Equipo Amarillo;amarillo
+Equipo Rosa;rosa
