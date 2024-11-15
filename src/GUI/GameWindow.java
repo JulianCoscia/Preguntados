@@ -174,7 +174,7 @@ public class GameWindow extends JFrame {
 		eightTeamScore.setBounds(595, 530, 70, 40);
 		scoreLabels.add(eightTeamScore);
 		
-		createTeamLabels();
+		createTeamScoreLabels();
 		
 		//__________ creating TeamName labels __________
 		ArrayList<JLabel> teamNames = new ArrayList<JLabel>();
@@ -213,54 +213,8 @@ public class GameWindow extends JFrame {
 		
 		createTeamNameLabels(teamNames);
 		
-		//__________ creating team labels __________
-		JLabel firstTeamLabel = new JLabel("");
-		firstTeamLabel.setBounds(596, 181, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/redTeam2.png"));
-		firstTeamLabel.setIcon(scaleImage(originalImage, firstTeamLabel));
-		contentPane.add(firstTeamLabel);
-		
-		JLabel secondTeamLabel = new JLabel("");
-		secondTeamLabel.setBounds(596, 231, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/whiteTeam2.png"));
-		secondTeamLabel.setIcon(scaleImage(originalImage, secondTeamLabel));
-		contentPane.add(secondTeamLabel);
-		
-		JLabel thirdTeamLabel = new JLabel("");
-		thirdTeamLabel.setBounds(596, 281, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/orangeTeam2.png"));
-		thirdTeamLabel.setIcon(scaleImage(originalImage, thirdTeamLabel));
-		contentPane.add(thirdTeamLabel);
-		
-		JLabel forthTeamLabel = new JLabel("");
-		forthTeamLabel.setBounds(596, 331, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/blueTeam2.png"));
-		forthTeamLabel.setIcon(scaleImage(originalImage, forthTeamLabel));
-		contentPane.add(forthTeamLabel);
-		
-		JLabel fifthTeamLabel = new JLabel("");
-		fifthTeamLabel.setBounds(596, 381, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/magentaTeam2.png"));
-		fifthTeamLabel.setIcon(scaleImage(originalImage, fifthTeamLabel));
-		contentPane.add(fifthTeamLabel);
-		
-		JLabel sixthTeamLabel = new JLabel("");
-		sixthTeamLabel.setBounds(596, 431, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/greenTeam2.png"));
-		sixthTeamLabel.setIcon(scaleImage(originalImage, sixthTeamLabel));
-		contentPane.add(sixthTeamLabel);
-		
-		JLabel seventhTeamLabel = new JLabel("");
-		seventhTeamLabel.setBounds(596, 481, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/yellowTeam2.png"));
-		seventhTeamLabel.setIcon(scaleImage(originalImage, seventhTeamLabel));
-		contentPane.add(seventhTeamLabel);
-		
-		JLabel eigthTeamLabel = new JLabel("");
-		eigthTeamLabel.setBounds(596, 531, 330, 40);
-		originalImage = new ImageIcon(this.getClass().getResource("/images/pinkTeam2.png"));
-		eigthTeamLabel.setIcon(scaleImage(originalImage, eigthTeamLabel));
-		contentPane.add(eigthTeamLabel);
+		//__________ creating team background labels __________
+		createTeamBackgroundLabels();
 		
 		JButton startGameButton = new JButton("Iniciar Juego");
 		startGameButton.addActionListener(new ActionListener() {
@@ -384,7 +338,6 @@ public class GameWindow extends JFrame {
 		nextQuestionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				optionClicked = false;
-				secondsPerQuestionLabel.setText(myGame.getTimePerQuestion()+"");
 				myGame.nextQuestion();
 				
 				if (myGame.getCurrentQuestion() != null) {
@@ -403,6 +356,7 @@ public class GameWindow extends JFrame {
 					timerBarLabel.setBounds(secondsPerQuestionLabel.getX(), secondsPerQuestionLabel.getY(), secondsPerQuestionLabel.getWidth(), secondsPerQuestionLabel.getHeight());
 					timerBarLabel.setBackground(Color.GREEN);
 				}
+				secondsPerQuestionLabel.setText(myGame.getTimePerQuestion()+"");
 				nextQuestionButton.setEnabled(false);
 				timeEnded = false;
 			}
@@ -425,6 +379,28 @@ public class GameWindow extends JFrame {
 		nextQuestionButton.setEnabled(false);
 	}
 	
+	private void createTeamBackgroundLabels() {
+		ImageIcon originalImage;
+		int x, y, width, height;
+		x = 596;
+		y = 181;
+		width = 330;
+		height = 40;
+		int sum = 50;
+		int value = 0;
+		
+		//podria mejorar el tema de las variables. crear teamConstants para esto, los puntajes, y etc. solo cambia el y o el x en algunas cosas
+		
+		for(Team gt:myGame.getTeams()) {
+			JLabel label = new JLabel();
+			label.setBounds(x, y+value, width, height);
+			originalImage = new ImageIcon(this.getClass().getResource("/images/"+gt.getimageID()+"Team2.png"));
+			label.setIcon(scaleImage(originalImage, label));
+			contentPane.add(label);
+			value = value + sum;
+		}
+	}
+
 	private void refreshFrame() {
 		if (myGame.getCurrentQuestion() != null) {
 			questionNumberLabel.setText(myGame.getCurrentQuestion().getQuestionNumber()+"");
@@ -577,7 +553,7 @@ public class GameWindow extends JFrame {
 	/**
 	 * Creates the team labels.
 	 */
-	private void createTeamLabels() {
+	private void createTeamScoreLabels() {
 		int i = 0;
 		ArrayList<Team> teamNames = myGame.getTeams();		
 		

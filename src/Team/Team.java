@@ -3,16 +3,25 @@ package Team;
 import java.awt.Color;
 
 public class Team {
-	private String name;
-	private int number;
-	private Color color;
-	private int score;
+	protected String name;
+	protected int number;
+	protected Color color;
+	protected int score;
+	protected String teamDesign;
 	
 	public Team(String name, Color color, int number) {
 		this.name = name;
 		this.color = color;
 		this.score = 0;
 		this.number = number;
+	}
+	
+	public Team(String name, Color color, int number, String imageID) {
+		this.name = name;
+		this.color = color;
+		this.score = 0;
+		this.number = number;
+		this.teamDesign = imageID;
 	}
 	
 	public Team() {
@@ -98,5 +107,12 @@ public class Team {
 		score = score - value;
 			
 		return score;
+	}
+	
+	/**
+	 * @return Team design image ID.
+	 */
+	public String getimageID() {
+		return teamDesign;
 	}
 }

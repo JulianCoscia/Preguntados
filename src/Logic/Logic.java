@@ -114,42 +114,63 @@ public class Logic {
 	public void createTeam(String info) {
 		String[] parts = info.split(";");
 		Color color = Color.LIGHT_GRAY;
+		String imageID = "gray";
 		
 		if (parts.length == 2) {
 			switch (parts[1].toLowerCase()) {
-				case "azul":
+				case "azul":{
 					color = new Color(70, 81, 206);
+					imageID = "blue";
 					break;
-				case "gris":
+				}
+				case "gris":{
 					color = new Color(134, 134, 134);
+					imageID = "gray";
 					break;
-				case "verde":
+				}
+				case "verde":{
 					color = new Color(28, 166, 38);
+					imageID = "green";
 					break;
-				case "violeta":
+				}
+				case "violeta":{
 					color = new Color(163, 73, 164);
+					imageID = "magenta";
 					break;
-				case "rosa":
+				}
+				case "rosa":{
 					color = new Color(255, 119, 164);
+					imageID = "pink";
 					break;
-				case "naranja":
+				}
+				case "naranja":{
 					color = new Color(255, 102, 0);
+					imageID = "orange";
 					break;
-				case "amarillo":
+				}
+				case "amarillo":{
 					color = new Color(240, 204, 2);
+					imageID = "yellow";
 					break;
-				case "rojo":
+				}
+				case "rojo":{
 					color = new Color(237, 28, 36);
+					imageID = "red";
 					break;
-				case "negro":
+				}
+				case "negro":{
 					color = new Color(0, 0, 0);
+					imageID = "black";
 					break;
-				case "blanco":
+				}
+				case "blanco":{
 					color = Color.WHITE;
+					imageID = "white";
 					break;
+				}
 			}
 			
-			teams.createTeam(parts[0], color);
+			teams.createTeam(parts[0], color, imageID);
 		}
 	}
 	

@@ -66,6 +66,17 @@ public class Teams {
 	}
 	
 	/**
+	 * Creates and adds a new graphic team to the Team list.
+	 * @param name Team's name.
+	 * @param color Team's color.
+	 * @param id Team design image ID.
+	 */
+	public void createTeam(String name, Color color, String id) {
+		Team newTeam = new Team(name, color, teams.size(), id);
+		teams.add(newTeam);
+	}
+	
+	/**
 	 * Creates a new empty team (Without name, number or color).
 	 * @return New empty team.
 	 */
