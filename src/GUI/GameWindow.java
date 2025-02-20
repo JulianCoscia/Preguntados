@@ -12,7 +12,9 @@ import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 
 import Logic.Game;
+import Question.Questions;
 import Team.Team;
+import Team.Teams;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -30,6 +32,13 @@ public class GameWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int MAX_OPTIONS = 4;
+	private static final int TEAMLABEL_HEIGHT = 40;
+	private static final int TEAMLABEL_Y_SPACE = 50;
+	private static final int TEAMLABEL_Y_TOP = 180;
+	private static final int TEAMSCORELABEL_X_VALUE = 595;
+	private static final int TEAMSCORELABEL_WIDTH = 70;
+	private static final int TEAMNAMELABEL_X_VALUE = 720;
+	private static final int TEAMNAMELABEL_WIDTH_VALUE = 207;
 	private Game myGame;
 	private JPanel contentPane;
 	private JLabel teamTurnLabel;
@@ -46,8 +55,8 @@ public class GameWindow extends JFrame {
 	private float decimalsValueTimeBar;
 	private float decimalsValueTimeBarCounter;
 
-	public GameWindow() {
-		myGame  = new Game(45, this);
+	public GameWindow(Teams teamsLoaded, Questions questionsLoaded) {
+		myGame  = new Game(45, this, questionsLoaded, teamsLoaded);
 		createUI();
 	}
 	
@@ -142,76 +151,10 @@ public class GameWindow extends JFrame {
 		contentPane.add(EquiposLabel);
 		
 		//__________ creating scoreLabels __________
-		JLabel firstTeamScore = new JLabel();
-		firstTeamScore.setBounds(595, 180, 70, 40);
-		scoreLabels.add(firstTeamScore);
-		
-		JLabel secondTeamScore = new JLabel();
-		secondTeamScore.setBounds(595, 230, 70, 40);
-		scoreLabels.add(secondTeamScore);
-		
-		JLabel thirdTeamScore = new JLabel();
-		thirdTeamScore.setBounds(595, 280, 70, 40);
-		scoreLabels.add(thirdTeamScore);
-		
-		JLabel forthTeamScore = new JLabel();
-		forthTeamScore.setBounds(595, 330, 70, 40);
-		scoreLabels.add(forthTeamScore);
-		
-		JLabel fifthTeamScore = new JLabel();
-		fifthTeamScore.setBounds(595, 380, 70, 40);
-		scoreLabels.add(fifthTeamScore);
-		
-		JLabel sixthTeamScore = new JLabel();
-		sixthTeamScore.setBounds(595, 430, 70, 40);
-		scoreLabels.add(sixthTeamScore);
-		
-		JLabel seventhTeamScore = new JLabel();
-		seventhTeamScore.setBounds(595, 480, 70, 40);
-		scoreLabels.add(seventhTeamScore);
-		
-		JLabel eightTeamScore = new JLabel();
-		eightTeamScore.setBounds(595, 530, 70, 40);
-		scoreLabels.add(eightTeamScore);
-		
 		createTeamScoreLabels();
 		
 		//__________ creating TeamName labels __________
-		ArrayList<JLabel> teamNames = new ArrayList<JLabel>();
-		
-		JLabel firstTeamName = new JLabel();
-		firstTeamName.setBounds(720, 180, 207, 40);
-		teamNames.add(firstTeamName);
-		
-		JLabel secondTeamName = new JLabel();
-		secondTeamName.setBounds(720, 230, 207, 40);
-		teamNames.add(secondTeamName);
-		
-		JLabel thirdTeamName = new JLabel();
-		thirdTeamName.setBounds(720, 280, 207, 40);
-		teamNames.add(thirdTeamName);
-		
-		JLabel forthTeamName = new JLabel();
-		forthTeamName.setBounds(720, 330, 207, 40);
-		teamNames.add(forthTeamName);
-		
-		JLabel fifthTeamName = new JLabel();
-		fifthTeamName.setBounds(720, 380, 207, 40);
-		teamNames.add(fifthTeamName);
-		
-		JLabel sixthTeamName = new JLabel();
-		sixthTeamName.setBounds(720, 430, 207, 40);
-		teamNames.add(sixthTeamName);
-		
-		JLabel seventhTeamName = new JLabel();
-		seventhTeamName.setBounds(720, 480, 207, 40);
-		teamNames.add(seventhTeamName);
-		
-		JLabel eightTeamName = new JLabel();
-		eightTeamName.setBounds(720, 530, 207, 40);
-		teamNames.add(eightTeamName);
-		
-		createTeamNameLabels(teamNames);
+		createTeamNameLabels();//teamNames);
 		
 		//__________ creating team background labels __________
 		createTeamBackgroundLabels();
@@ -219,11 +162,15 @@ public class GameWindow extends JFrame {
 		JButton startGameButton = new JButton("Iniciar Juego");
 		startGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				optionClicked = false;
-				refreshFrame();
-				nextQuestionButton.setEnabled(false);
-				myGame.playTimer();
-				startGameButton.setVisible(false);
+				if(myGame.getNumberOfQuestions()!= 0) {
+					optionClicked = false;
+					refreshFrame();
+					nextQuestionButton.setEnabled(false);
+					myGame.playTimer();
+					startGameButton.setVisible(false);
+				}else {
+					JOptionPane.showMessageDialog(contentPane, "No hay preguntas cargadas en el programa.", "Preguntas no encontradas", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		startGameButton.setFont(new Font("Segoe UI Historic", Font.PLAIN, 12));
@@ -432,6 +379,7 @@ public class GameWindow extends JFrame {
 		timeEnded = true;
 		nextQuestionButton.setEnabled(true);
 		
+		//Marks the correct and the incorrect options
 		for(int i = 0; i < myGame.getCurrentQuestion().getOptions().size(); i++) {
 			if (myGame.getCurrentQuestion().getOptions().get(i).isCorrect()) {
 				originalImage = new ImageIcon(this.getClass().getResource("/images/correctAnswerOptionBar.png"));
@@ -461,6 +409,7 @@ public class GameWindow extends JFrame {
 		nextQuestionButton.setEnabled(true);
 		myGame.pauseTimer();
 		
+		//If the selected option was correct
 		if (myGame.getCurrentQuestion().getOptions().get(index).isCorrect()) {
 			originalImage = new ImageIcon(this.getClass().getResource("/images/correctAnswerOptionBar.png"));
 			optionLabel.setIcon(scaleImage(originalImage, optionLabel));
@@ -474,7 +423,7 @@ public class GameWindow extends JFrame {
 				optionLabels.get(value).setIcon(scaleImage(originalImage, optionLabels.get(value)));
 				value = (value+1)%optionSize;
 			}
-		}else {
+		}else {//If the selected option was incorrect
 			originalImage = new ImageIcon(this.getClass().getResource("/images/incorrectAnswerOptionBar.png"));
 			optionLabel.setIcon(scaleImage(originalImage, optionLabel));
 			
@@ -554,15 +503,18 @@ public class GameWindow extends JFrame {
 	 * Creates the team labels.
 	 */
 	private void createTeamScoreLabels() {
-		int i = 0;
-		ArrayList<Team> teamNames = myGame.getTeams();		
+		ArrayList<Team> teamNames = myGame.getTeams();	
+		int y = TEAMLABEL_Y_TOP;
 		
-		for(JLabel lb:scoreLabels) {
-			lb.setHorizontalAlignment(SwingConstants.CENTER);
-			lb.setFont(new Font("SansSerif", Font.PLAIN, 14));
-			lb.setText(teamNames.get(i).getScore()+"");
-			contentPane.add(lb);
-			i++;
+		for (int i = 0; i < teamNames.size(); i++) {
+			JLabel teamScoreLabel = new JLabel();
+			teamScoreLabel.setBounds(TEAMSCORELABEL_X_VALUE, y, TEAMSCORELABEL_WIDTH, TEAMLABEL_HEIGHT);
+			teamScoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			teamScoreLabel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+			teamScoreLabel.setText(teamNames.get(i).getScore()+"");
+			scoreLabels.add(teamScoreLabel);
+			contentPane.add(teamScoreLabel);
+			y = y + TEAMLABEL_Y_SPACE;
 		}
 	}
 	
@@ -570,16 +522,18 @@ public class GameWindow extends JFrame {
 	 * Creates the team name labels.
 	 * @param nameLabels The list with the labels.
 	 */
-	private void createTeamNameLabels(ArrayList<JLabel> nameLabels) {
-		int index = 0;
+	private void createTeamNameLabels() {
+		int y = TEAMLABEL_Y_TOP;
 		ArrayList<Team> teamNames = myGame.getTeams();
 		
-		for(JLabel lb: nameLabels) {
-			lb.setText(teamNames.get(index).getName()+"");
-			lb.setHorizontalAlignment(SwingConstants.CENTER);
-			lb.setFont(new Font("SansSerif", Font.PLAIN, 14));
-			contentPane.add(lb);
-			index++;
+		for (int i = 0; i < teamNames.size(); i++) {
+			JLabel teamNameLabel = new JLabel();
+			teamNameLabel.setBounds(TEAMNAMELABEL_X_VALUE, y, TEAMNAMELABEL_WIDTH_VALUE, TEAMLABEL_HEIGHT);
+			teamNameLabel.setText(teamNames.get(i).getName()+"");
+			teamNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			teamNameLabel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+			contentPane.add(teamNameLabel);
+			y = y + TEAMLABEL_Y_SPACE;
 		}
 	}
 }

@@ -9,12 +9,22 @@ import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import Question.Question;
+import Question.Questions;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -25,14 +35,16 @@ public class QuestionMaker extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextArea questionTextField;
+	private JList<String> questionLoadedList;
 	private ArrayList<JTextArea> optionList;
+	private ArrayList<JRadioButton> radioButtonList;
 	private ButtonGroup group;
 	private int correctOption;
 
 	/**
 	 * Create the frame.
 	 */
-	public QuestionMaker() {
+	public QuestionMaker(Questions questionsLoaded) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1000, 700);
 		contentPane = new JPanel();
@@ -43,6 +55,7 @@ public class QuestionMaker extends JFrame {
 		
 		ImageIcon originalImage;
 		optionList = new ArrayList<JTextArea>(4);
+		radioButtonList = new ArrayList<JRadioButton>(4);
 		group = new ButtonGroup();
 		correctOption = -1;
 
@@ -66,11 +79,35 @@ public class QuestionMaker extends JFrame {
 		questionLoaderLabel.setBounds(0, 0, 984, 82);
 		contentPane.add(questionLoaderLabel);
 		
-		JList<String> questionLoadedList = new JList<String>();
+		DefaultListModel<String> listModel = new DefaultListModel<>();
+		questionLoadedList = new JList<>(listModel);
 		questionLoadedList.setBorder(new LineBorder(new Color(0, 0, 0)));
-		//list.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		questionLoadedList.setBounds(10, 158, 331, 393);
-		contentPane.add(questionLoadedList);
+		//questionLoadedList.setBounds(10, 158, 331, 393);
+		JScrollPane scrollPane = new JScrollPane(questionLoadedList);
+		scrollPane.setBounds(10, 158, 331, 393);
+		questionLoadedList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) { //Avoid duplicated events
+                    int selectedIndex = questionLoadedList.getSelectedIndex();
+                    Question questionSelected = questionsLoaded.getQuestion(selectedIndex+1);
+                    questionTextField.setText(questionSelected.getQuestionText());
+                    
+                    for(int i = 0; i < questionSelected.getOptions().size(); i++) {
+                    	optionList.get(i).setText(questionSelected.getOptions().get(i).getOption());
+                    	
+                    	if (questionSelected.getOptions().get(i).isCorrect()) {
+                    		radioButtonList.get(i).setSelected(true);
+                    		correctOption = i;
+                    	}
+                    }
+                    
+                    
+                }
+            }
+        });
+		contentPane.add(scrollPane);
+		loadQuestions(questionsLoaded, listModel);
 		
 		questionTextField = new JTextArea();
 		questionTextField.setFont(new Font("Monospaced", Font.PLAIN, 18));
@@ -96,6 +133,19 @@ public class QuestionMaker extends JFrame {
 		contentPane.add(isCorrectLabel);
 		
 		JButton btnNewButton = new JButton("Eliminar todas");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(JOptionPane.showConfirmDialog(contentPane, "¿Realmente desea eliminar TODAS las preguntas cargadas?",
+												"Eliminar todas las preguntas", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE) == 0) {
+					questionsLoaded.clearList();
+					DefaultListModel<String> newListModel = new DefaultListModel<>();
+					questionLoadedList.setModel(newListModel);
+					
+					//Esto elimina del maker pero no de las cargadas. al iniciar el juego las preguntas siguen. sera que no actualice 
+					//con que referencia comienza game?
+				}
+			}
+		});
 		btnNewButton.setBounds(10, 619, 140, 31);
 		contentPane.add(btnNewButton);
 		
@@ -164,6 +214,20 @@ public class QuestionMaker extends JFrame {
 		contentPane.add(background);
 	}
 	
+	/**
+	 * Loads to the list model the questions readed.
+	 * @param questionsLoaded
+	 * @param listModel
+	 */
+	private void loadQuestions(Questions questionsLoaded, DefaultListModel<String> listModel) {
+		Question question;
+		for(int i = 1; i < questionsLoaded.getNumberOfQuestions()+1; i++) {
+			question = questionsLoaded.getQuestion(i);
+			listModel.addElement(question.getQuestionNumber()+") "+question.getQuestionText());
+		}
+		
+	}
+
 	private void createOptionField() {
 		int textAreaY = 346;
 		int radioButtonY = 355;
@@ -192,6 +256,7 @@ public class QuestionMaker extends JFrame {
 			});
 			contentPane.add(isCorrectRadioButton);
 			group.add(isCorrectRadioButton);
+			radioButtonList.add(isCorrectRadioButton);
 			
 			//background
 			JLabel optionBackground = new JLabel("");

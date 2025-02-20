@@ -10,6 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
+import Question.Questions;
+import Team.Teams;
+import Logic.DataLoader;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -20,6 +25,7 @@ public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private DataLoader loader;
 	private JLabel topLabel;
 	private JButton startGameButton;
 	private JButton configButton;
@@ -31,22 +37,6 @@ public class MainWindow extends JFrame {
 	private JButton backButton;
 	private JLabel timePerQuestionLabel;
 	private JTextField timePerQuestion;
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainWindow frame = new MainWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -60,10 +50,10 @@ public class MainWindow extends JFrame {
 		setResizable(false);
 		setTitle("Preguntados!");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/images/question_mark.png")));
-		
-
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		loader = new DataLoader();
 		
 		topLabel = new JLabel();
 		topLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -74,7 +64,7 @@ public class MainWindow extends JFrame {
 		startGameButton = new JButton("Iniciar Juego");
 		startGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GameWindow game = new GameWindow();
+				GameWindow game = new GameWindow(loader.getTeams(), loader.getQuestions());
 				game.setVisible(true);
 				setVisible(false);
 			}
@@ -112,11 +102,11 @@ public class MainWindow extends JFrame {
 		exitButton.setBounds(177, 525, 130, 25);
 		contentPane.add(exitButton);
 		
-		//..........................................
+		//________________________ Config window provision________________________
 		loadQuestionButton = new JButton("Cargar pregunta");
 		loadQuestionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				QuestionMaker Qwindow = new QuestionMaker();
+				QuestionMaker Qwindow = new QuestionMaker(loader.getQuestions());
 				Qwindow.setVisible(true);
 				setVisible(false);
 			}
@@ -157,6 +147,10 @@ public class MainWindow extends JFrame {
 		contentPane.add(backButton);
 		
 		showMainWindowProvision();
+	}
+	
+	public void refreshQuestions(Questions newQuestions) {
+		loader.setQuestions(newQuestions);
 	}
 	
 	private void showConfigWindowProvision() {

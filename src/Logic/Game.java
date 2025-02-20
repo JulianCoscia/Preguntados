@@ -14,8 +14,8 @@ public class Game {
 	private Logic myLogic;
 	private GameWindow GUI;
 	
-	public Game(int secondsPerQuestion, GameWindow GUI) {
-		myLogic = new Logic();
+	public Game(int secondsPerQuestion, GameWindow GUI, Questions questionsLoaded, Teams teamsLoaded) {
+		myLogic = new Logic(teamsLoaded, questionsLoaded);
 		this.timePerQuestion = secondsPerQuestion;
 		currentQuestion = myLogic.getFirstQuestion();
 		currentTeam = myLogic.getFirstTeam();

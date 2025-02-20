@@ -107,4 +107,11 @@ public class Questions {
 	public int getNumberOfQuestions() {
 		return questions.size();
 	}
+	
+	/**
+	 * Clears the entire list, creating a new one.
+	 */
+	public void clearList() {
+		questions = new ArrayList<Question>();
+	}
 }
